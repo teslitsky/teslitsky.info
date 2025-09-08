@@ -24,13 +24,17 @@
         Personality: <a href="https://www.16personalities.com/istp-personality">Virtuoso (ISTP-T)</a>
     </p>
 
-    <h3>Let's socialize:</h3>
+    <h3>Links</h3>
     <ul class="social">
         <li><a href="https://github.com/teslitsky">GitHub</a></li>
-        <li><a href="https://twitter.com/teslitsky">Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/teslitsky/">LinkedIn</a></li>
         <li><a href="https://t.me/techleadsky">My tech blog in Telegram (🇺🇦)</a></li>
-        <li><a href="mailto:%64%6d%79%74%72%6f%40%74%65%73%6c%69%74%73%6b%79%2e%69%6e%66%6f">dmytro@teslitsky.info</a></li>
+        <li>
+            <span id="contact-email" data-u="ZG15dHJv" data-d="dGVzbGl0c2t5LmluZm8=">
+                <span aria-hidden="true">Loading...</span>
+                <noscript>dmytro@teslitsky.info</noscript>
+            </span>
+        </li>
     </ul>
 
     <p><a href="https://teslitsky.info/cv.pdf">Download CV</a></p>
@@ -38,5 +42,18 @@
     <p>Hard skills and buzzwords: JavaScript, TypeScript, Node.js, NestJS, Prisma, PostgreSQL, MySQL, Docker, K8s, CI/CD, Deploy, ArgoCD, Observability, Grafana, Prometheus, Sentry, OpenTelemetry, Redis, BullMQ, MongoDB, Express.js, Fastify, Vue.js.</p>
     <p>English levels: <a href="https://api.busuu.com/anon/certificates/42864ffa724b287b96662dbb5fd89b69">A1</a>, <a
             href="https://api.busuu.com/anon/certificates/dbe78a2b392ac7229bbbf23726051e67">A2</a>, B1 in progress...</p>
+
+    <script>
+        (function () {
+            const el = document.getElementById('contact-email');
+            if (!el) return;
+
+            try {
+                const u = atob(el.dataset.u);
+                const d = atob(el.dataset.d);
+                el.textContent = u + '@' + d;
+            } catch {}
+        })();
+    </script>
 </body>
 </html>

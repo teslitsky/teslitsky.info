@@ -21,21 +21,39 @@ const dateFmt = new Intl.DateTimeFormat('uk-UA', {
   <p><a href="/">← На головну</a></p>
   <h1>Блог</h1>
   {posts.length === 0 && <p>Поки що немає дописів — зазирніть пізніше.</p>}
-  <ul class="social">
+  <div class="post-list">
     {
       posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.id}`}>{post.data.title}</a>
-          <br />
-          <small>
+        <article>
+          <h2>
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </h2>
+          <p class="meta">
             <time datetime={post.data.pubDate.toISOString()}>
               {dateFmt.format(post.data.pubDate)}
             </time>
             {' · '}
             {post.data.description}
-          </small>
-        </li>
+          </p>
+        </article>
       ))
     }
-  </ul>
+  </div>
+
+  <style>
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .post-list h2 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+    .post-list .meta {
+      margin: 0.25rem 0 0;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+  </style>
 </Base>

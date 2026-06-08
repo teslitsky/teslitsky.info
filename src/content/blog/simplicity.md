@@ -4,8 +4,7 @@ description: 'Думки про статтю Nobody Gets Promoted for Simplicity
 pubDate: 2026-03-06
 ---
 
-Прочитав статтю _Nobody Gets Promoted for Simplicity_ і загалом погоджуюся з її
-тезами.
+Прочитав статтю [Nobody Gets Promoted for Simplicity](https://terriblesoftware.org/2026/03/03/nobody-gets-promoted-for-simplicity/) і загалом погоджуюся з її тезами.
 
 За весь свій професійний шлях я бачив лише один виняток, де простота і можливість не зробити зайвого цінуються більше, ніж надумана складність.
 

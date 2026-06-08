@@ -25,7 +25,8 @@ const dateFmt = new Intl.DateTimeFormat('uk-UA', {
       {
         updatedDate && (
           <span>
-            {' '}· Оновлено{' '}
+            {' '}
+            · Оновлено{' '}
             <time datetime={updatedDate.toISOString()}>
               {dateFmt.format(updatedDate)}
             </time>

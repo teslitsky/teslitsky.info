@@ -8,6 +8,7 @@ pubDate: 2025-10-16
 [Technical experts have zero customers](https://www.ivan.codes/thoughts/technical-experts-have-zero-customers).
 
 > Fix real problems first. Technical problems are a luxury you can afford later.
+
 Абсолютно згоден.
 
 Хороший код кращий за поганий. Підходяща архітектура – краще, ніж її відсутність. Але технічно досконалий продукт, який не вирішує бізнес-проблему, – нікому не потрібен. Спочатку зробіть, потім зробіть добре.

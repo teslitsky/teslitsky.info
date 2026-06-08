@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  type?: string;
+  lang?: string;
+}
+
+const {
+  title,
+  description = 'Dmytro Teslitsky, Tech Lead',
+  type = 'website',
+  lang = 'en',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Dmytro Teslitsky" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://teslitsky.info/assets/images/me.jpg" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 4rem;
+      }
+      a {
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.25;
+      }
+      ul.social {
+        list-style: none;
+        padding: 0;
+      }
+      pre {
+        overflow-x: auto;
+        padding: 1rem;
+        border-radius: 6px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </body>
+</html>

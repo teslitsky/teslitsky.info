@@ -1,0 +1,38 @@
+---
+import Base from './Base.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate } = post.data;
+
+const dateFmt = new Intl.DateTimeFormat('uk-UA', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={title} description={description} type="article" lang="uk">
+  <p><a href="/blog">← Усі дописи</a></p>
+  <article>
+    <h1>{title}</h1>
+    <p>
+      <time datetime={pubDate.toISOString()}>{dateFmt.format(pubDate)}</time>
+      {
+        updatedDate && (
+          <span>
+            {' '}· Оновлено{' '}
+            <time datetime={updatedDate.toISOString()}>
+              {dateFmt.format(updatedDate)}
+            </time>
+          </span>
+        )
+      }
+    </p>
+    <slot />
+  </article>
+</Base>

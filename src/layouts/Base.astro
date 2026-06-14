@@ -13,7 +13,10 @@ const {
   lang = 'en',
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
+  /\/$/,
+  '',
+);
 ---
 
 <!doctype html>
